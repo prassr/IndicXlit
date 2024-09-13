@@ -25,9 +25,7 @@ bash word_xlit_json.sh metadata.json "mr" mr_en_xlit.tsv
 
 ```
 f_1.wav	['sahaa', 'ziro', 'aththavis', 'yaa', 'pinkodchya', 'jawalpas', 'konee', 'suvidha', 'aahe', 'jee', 'athara', 'varsh', 'vaygatatil', 'lokanna', 'pahila', 'doses', 'puravat']
-f_2.wav	['tuzya', 'aayushyatil', 'sarvat', 'mahattvachi', 'vyakti', 'konati', 'aahe']
-f_2.wav	['majhya', 'aayushyatil', 'sagalyat', 'mahattvachi', 'vyakti', 'hee', 'majhi', 'eye', 'mhanje', 'mammich', 'aahe']
-f_3.wav	['majhya', 'mammini', 'majhyasathi', 'khoop', 'kahee', 'kelele', 'aahe', 'tine', 'kasht', 'v', 'sagalam', 'hay', 'majhyasathich', 'kelelam']
+f_2.wav	['majhya', 'mammini', 'majhyasathi', 'khoop', 'kahee', 'kelele', 'aahe', 'tine', 'kasht', 'v', 'sagalam', 'hay', 'majhyasathich', 'kelelam']
 ```
 
   - file path and list of words is tab separated.
