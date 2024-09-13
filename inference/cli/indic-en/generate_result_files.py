@@ -183,9 +183,19 @@ translation_str = f.read()
 
 dict_output = post_process(translation_str, lang_abr, _rescore)
 
-f_output = open('output/final_transliteration.txt', 'w')
-# output jsonlines
-for d in dict_output:
-    f_output.write('{'+''.join(d.split(' ')[1:]) + ':[' + ', '.join(dict_output[d]) + ']}\n')
-f_output.close()
-f.close()
+# # output jsonlines
+
+import json
+
+with open('output/final_transliteration.txt', 'w',  encoding='utf-8') as f:
+    # output format: {"सहा": ["sahaa", "saha", "sahah", "shaha", "sahha"], "झिरो": ["ziro", "jhiro", "ziiro", "zhiro", "zeero"], "अठ्ठावीस": ["aththavis", "atthavis", "atthavees", "aththavees", "atthaavees"], "या": ["yaa", "yaaa", "yaea", "yae", "yaah"], "पिनकोडच्या": ["pinkodchya", "pinkodechya", "pinakodachya", "pincodechya", "pinkodachya"], "जवळपास": ["jawalpas", "jawalpass", "javalpas", "jawalapas", "jawadpas"], "कोणी": ["konee", "koonee", "konii", "koni", "kooni"], "सुविधा": ["suvidha", "suwidha", "suveedha", "suvidhaa", "soovidha"], "आहे": ["aahe", "aahey", "aahee", "aahay", "aaahe"], "जी": ["jee", "zee", "jii", "zii", "jiie"], "अठरा": ["athara", "athra", "athraa", "athera", "atthra"], "वर्ष": ["varsh", "varsha", "warsh", "warsha", "varash"], "वयगटातील": ["vaygatatil", "vayagatatil", "vayagatateel", "vaygatateel", "vaygataateel"], "लोकांना": ["lokanna", "lokannaa", "lokaanna", "lokaanaa", "lokana"], "पहिला": ["pahila", "paheela", "pahilaa", "pahiila", "pahilah"], "डोस": ["doses", "doos", "doosa", "doose", "dooas"], "पुरवत": ["puravat", "purvat", "purwat", "purawat", "puravata"]}
+    # do = {}
+    # for key in dict_output.keys():
+    #     do[''.join(key.split(' ')[1:])] = dict_output[key]
+    # json.dump(do, f, ensure_ascii=False)
+
+    # output format: ["saha","zero"."hai"]
+    ls = []
+    for key in dict_output.keys():
+        ls.append(dict_output[key][0])
+    f.write(str(ls))

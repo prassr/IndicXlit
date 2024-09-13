@@ -38,6 +38,8 @@ jq -r '[."text", ."filepath"] | @tsv' "$1" | while IFS=$'\t' read -r text filepa
 	# -i = name of the input file :: str
 	# -b = beam size :: int
 	# -n = best n candidates (b>=n) :: int
-	# -r = rerank :: boolean (1 or 0)	
+	# -r = rerank :: boolean (1 or 0)
 	bash transliterate_word.sh -l "$2" -i 'sentence.txt' -b 10 -n 5 -r 1
+	>sentence.txt
+	cat output/transliterated_sentence.txt
 done
